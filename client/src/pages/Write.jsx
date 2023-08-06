@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import axios from "axios";
+import { AuthContext } from "../context/authContext";
 import { useLocation, useNavigate } from "react-router-dom";
 import moment from "moment";
 
@@ -11,6 +12,7 @@ const Write = () => {
   const [title, setTitle] = useState(state?.desc || "");
   const [file, setFile] = useState(null);
   const [cat, setCat] = useState(state?.cat || "");
+  const { currentUser, logout } = useContext(AuthContext);
 
   const navigate = useNavigate()
 
@@ -26,6 +28,17 @@ const Write = () => {
   };
 
   const handleClick = async (e) => {
+    {currentUser ? (
+      <button onClick={handleClick}>Publish</button>
+     ) : (
+      alert(" Please Login First!")
+     )}
+
+     {title.value=="" && cat.value=="" ? (
+      console.log("")
+     ) : (
+      alert(" Write Blog First!")
+     )}
     e.preventDefault();
     const imgUrl = await upload();
 
@@ -87,8 +100,8 @@ const Write = () => {
             Upload Image
           </label>
           <div className="buttons">
-            <button>Save as a draft</button>
-            <button onClick={handleClick}>Publish</button>
+            {/* <button>Save as a draft</button> */}
+            <button onClick={handleClick}>Publish</button>  
           </div>
         </div>
         <div className="item">

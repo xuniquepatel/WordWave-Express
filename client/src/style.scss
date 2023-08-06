@@ -1,5 +1,16 @@
 $lightGreen: #b9e7e7;
 
+.description {
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 18px;
+  color: #5a5454;
+  line-height: 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+}
 .app {
   display: flex;
   justify-content: center;
@@ -7,9 +18,10 @@ $lightGreen: #b9e7e7;
     width: 1024px;
 
     .link {
-      text-decoration: none;
+      text-decoration:solid;
       color: inherit;
     }
+
     //LOGIN & REGISTER
 
     .auth {
@@ -21,7 +33,7 @@ $lightGreen: #b9e7e7;
       background-color: $lightGreen;
 
       h1 {
-        font-size: 20px;
+        font-size: 40px;
         color: teal;
         margin-bottom: 20px;
       }
@@ -29,9 +41,9 @@ $lightGreen: #b9e7e7;
       form {
         display: flex;
         flex-direction: column;
-        padding: 50px;
+        padding: 40px;
         background-color: white;
-        width: 200px;
+        width: 300px;
         gap: 20px;
 
         input {
@@ -71,13 +83,13 @@ $lightGreen: #b9e7e7;
         justify-content: space-between;
         .logo {
           img {
-            width: 120px;
+            width: 100px;
           }
         }
         .links {
           display: flex;
           align-items: center;
-          gap: 10px;
+          gap: 8px;
 
           h6 {
             font-size: 16px;
@@ -118,7 +130,7 @@ $lightGreen: #b9e7e7;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      font-size: 12px;
+      font-size: 15px;
       img {
         height: 50px;
       }
@@ -128,14 +140,14 @@ $lightGreen: #b9e7e7;
 
     .home {
       .posts {
-        margin-top: 50px;
+        margin-top: 30px;
         display: flex;
-        flex-direction: column;
-        gap: 150px;
+        flex-direction:column-reverse;
+        gap: 60px;
 
         .post {
           display: flex;
-          gap: 100px;
+          gap: 25px;
 
           &:nth-child(2n + 1) {
             flex-direction: row-reverse;
@@ -143,22 +155,22 @@ $lightGreen: #b9e7e7;
 
           .img {
             flex: 2;
-            position: relative;
+            position:relative;
 
             &::after {
               content: "";
               width: 100%;
-              height: 100%;
+              height: 40%;
               background-color: $lightGreen;
               position: absolute;
-              top: 20px;
-              left: -20px;
+              top: 0px;
+              left: 0px;
               z-index: -1;
             }
 
             img {
               width: 100%;
-              max-height: 400px;
+              max-height: 500px;
               object-fit: cover;
             }
           }
@@ -170,7 +182,7 @@ $lightGreen: #b9e7e7;
             justify-content: space-between;
 
             h1 {
-              font-size: 48px;
+              font-size: 27px;
             }
 
             p {
@@ -179,10 +191,10 @@ $lightGreen: #b9e7e7;
 
             button {
               width: max-content;
-              padding: 10px 20px;
+              padding: 3px 4px;
               border: none;
               cursor: pointer;
-              background-color: white;
+              background-color: whitesmoke;
               border: 1px solid teal;
               color: teal;
 
@@ -207,7 +219,7 @@ $lightGreen: #b9e7e7;
         flex: 5;
         display: flex;
         flex-direction: column;
-        gap: 30px;
+        gap: 7px;
 
         img {
           width: 100%;
@@ -217,7 +229,7 @@ $lightGreen: #b9e7e7;
 
         .user {
           display: flex;
-          align-items: center;
+          align-items:first baseline;
           gap: 10px;
           font-size: 14px;
           img {
@@ -234,40 +246,41 @@ $lightGreen: #b9e7e7;
 
         .edit {
           display: flex;
-          gap: 5px;
+          gap: 7px;
 
           img {
-            width: 20px;
-            height: 20px;
+            width: 30px;
+            height: 30px;
             cursor: pointer;
           }
         }
 
         h1 {
-          font-size: 42px;
+          font-size: 30px;
           color: #333;
         }
 
         p {
           text-align: justify;
-          line-height: 30px;
+          margin-top: 5px;
+          font-size: 15px;
         }
       }
       .menu {
         flex: 2;
         display: flex;
         flex-direction: column;
-        gap: 25px;
+        gap: 15px;
 
         h1 {
-          font-size: 20px;
+          font-size: 22px;
           color: #555;
         }
 
         .post {
           display: flex;
           flex-direction: column;
-          gap: 10px;
+          gap: 5px;
 
           img {
             width: 100%;
@@ -276,12 +289,13 @@ $lightGreen: #b9e7e7;
           }
 
           h2 {
+            font-size: 20px;
             color: #555;
           }
 
           button {
             width: max-content;
-            padding: 7.5px 15px;
+            padding: 4px 5px;
             border: none;
             cursor: pointer;
             color: teal;
@@ -345,7 +359,7 @@ $lightGreen: #b9e7e7;
           color: #555;
 
           h1{
-            font-size: 20px;
+            font-size: 22px;
           }
 
           .file{

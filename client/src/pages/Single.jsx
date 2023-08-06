@@ -11,13 +11,11 @@ import DOMPurify from "dompurify";
 
 const Single = () => {
   const [post, setPost] = useState({});
-
+  const { currentUser } = useContext(AuthContext);
   const location = useLocation();
   const navigate = useNavigate();
  //post id 2
   const postId = location.pathname.split("/")[2];
-
-  const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,7 +53,7 @@ const Single = () => {
             alt=""
           />}
           <div className="info">
-            <span>{post.username}</span>
+            <span><button className="btn btn-dark">{post.username}</button></span>
             <p>Posted {moment(post.date).fromNow()}</p>
           </div>
           {currentUser.username === post.username && (
@@ -72,7 +70,7 @@ const Single = () => {
           dangerouslySetInnerHTML={{
             __html: DOMPurify.sanitize(post.desc),
           }}
-        ></p>      </div>
+        ></p></div>
       <Menu cat={post.cat}/>
     </div>
   );
